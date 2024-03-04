@@ -39,6 +39,13 @@ DL_URL=$(curl --silent ${AUTH_HEADER} "${API_URL}" \
     [ -d /usr/local/bin ] || sudo mkdir -p /usr/local/bin
     sudo cp /tmp/ffsend$$ /usr/local/bin/ffsend
     sudo chmod 755 /usr/local/bin/ffsend
+    /usr/local/bin/ffsend debug | grep infer-command > /dev/null && {
+      for cmd in ffput ffget ffdel
+      do
+        sudo rm -f /usr/local/bin/${cmd}
+        sudo ln -s /usr/local/bin/ffsend /usr/local/bin/${cmd}
+      done
+    }
   }
   rm -f "/tmp/ffsend$$"
   printf " done\n"
