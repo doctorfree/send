@@ -52,6 +52,18 @@ The public [Send](https://github.com/timvisee/send) service that is used as defa
 To use a self-hosted `send` service, set the `FFSEND_HOST` environment variable
 to the desired host or specify the host on the command line with `--host <URL>`.
 
+### Install ffsend
+
+As a normal user with `sudo` privilege run the following:
+
+```bash
+git clone https://github.com/doctorfree/send
+cd send
+./install-ffsend.sh
+# Installs in /usr/local/bin
+/usr/local/bin/ffsend debug
+```
+
 ### ffsend configuration and environment
 
 The following environment variables may be used to configure the following

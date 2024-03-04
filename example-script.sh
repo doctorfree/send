@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# Upload/download to/from a self-hosted Send service
+#
+# Example Send host setting using send.neoman.dev
+# Change this to the desired Send host URL
+export FFSEND_HOST="https://send.neoman.dev"
 
 # Stop on error
 set -e
